@@ -8,10 +8,6 @@
 # Updated 12/3/2016 by Jon Strutz
 
 
-with open('05_PROT.txt') as inputfile:
-    s = inputfile.read()
-
-
 # Translation matrix
 def translate_codon(codon):
     if codon == 'UUU' or codon == 'UUC':
@@ -67,7 +63,11 @@ def translate_codon(codon):
     else:
         return '-'
 
+
 def main():
+    with open('05_PROT.txt') as inputfile:
+        s = inputfile.read()
+
     # Initialize last_codon and translation
     last_codon_num = -1
     translation = []
